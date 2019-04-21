@@ -20,6 +20,6 @@
         file: src=/etc/nginx/sites-available/demo dest=/etc/nginx/sites-enabled/demo state=link
         notify: restart nginx
 
-    hadlers:
+    handlers:
       - name: restart nginx
         service: name=nginx state=restarted
