@@ -30,7 +30,7 @@
     tasks:
       - name: verify end to end response
         uri: url=http://{{item}} return_content=yes
-        with_items: "{{groups.loadbalancer}}"
+        with_items: groups.loadbalancer
         register: lb_index
 
       - fail: msg="index failed to return content"
@@ -41,7 +41,7 @@
     tasks:
       - name: verify backend response
         uri: url=http://{{item}} return_content=yes
-        with_items: "{{groups.webserver}}"
+        with_items: groups.webserver
         register: app_index
 
       - fail: msg="index failed to return content"
