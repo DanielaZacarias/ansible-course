@@ -47,5 +47,5 @@
         register: app_index
 
       - fail: msg="index failed to return content"
-        when: "'Hello, from sunny {{item.item}}!' not in item.content"
+        when: "'Hello, from sunny '~item.item~'!' not in item.content" 
         with_items: "{{app_index.results}}"
