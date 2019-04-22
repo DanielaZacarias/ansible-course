@@ -36,3 +36,14 @@
       - fail: msg="index failed to return content"
         when: "'Hello from sunny' not in item.content"
         with_items: "{{lb_index.results}}"
+
+  - hosts: loadbalancer
+    tasks:
+      - name: verify backend response
+        uri: url=http://{{item}} return_content=yes
+        with_items: groups.webserver
+        register: app_index
+
+      - fail: msg="index failed to return content"
+        when: "'Hello from sunny {{item.item}}!' not in item.content"
+        with_items: "{{app_index.results}}"
