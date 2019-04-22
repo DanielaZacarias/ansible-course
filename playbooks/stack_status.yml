@@ -30,7 +30,8 @@
     tasks:
       - name: verify end to end response
         uri: url=http://{{item}} return_content=yes
-        with_items: groups.loadbalancer
+        with_inventory_hostnames:
+          - loadbalancer
         register: lb_index
 
       - fail: msg="index failed to return content"
@@ -41,7 +42,8 @@
     tasks:
       - name: verify backend response
         uri: url=http://{{item}} return_content=yes
-        with_items: groups.webserver
+        with_inventory_hostnames:
+          - webserver
         register: app_index
 
       - fail: msg="index failed to return content"
