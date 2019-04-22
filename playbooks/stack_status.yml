@@ -38,14 +38,12 @@
         when: "'Hello, from sunny' not in item.content"
         with_items: "{{lb_index.results}}"
 
-  - hosts: loadbalancer
-    tasks:
       - name: verify backend response
-        uri: url=http://{{item}} return_content=yes
+        uri: url="http://{{item}}/db" return_content=yes
         with_inventory_hostnames:
-          - webserver
-        register: app_index
+          - loadbalancer
+        register: app_db
 
-      - fail: msg="index failed to return content"
-        when: "'Hello, from sunny '~item.item~'!' not in item.content" 
-        with_items: "{{app_index.results}}"
+      - fail: msg="db failed to return content"
+        when: "'Database Connected from' not in item.content"
+        with_items: "{{app_db.results}}"
