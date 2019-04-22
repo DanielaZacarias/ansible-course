@@ -4,7 +4,7 @@
     tasks:
       - name: install apache2
         apt:
-          name: ['apache2', 'libapache2-mod-wsgi', 'python-pip', 'python-virtualenv']
+          name: ['apache2', 'libapache2-mod-wsgi', 'python-pip', 'python-virtualenv', 'python-mysqldb']
           state: present
           update_cache: yes
 
