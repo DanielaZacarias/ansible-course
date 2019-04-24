@@ -1,45 +1,90 @@
-2019-04-24 19:56:07,471 p=24428 u=ubuntu |  PLAY [loadbalancer] ******************************************************************************************************
-2019-04-24 19:56:07,479 p=24428 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
-2019-04-24 19:56:09,571 p=24428 u=ubuntu |  ok: [184.73.112.73]
-2019-04-24 19:56:09,597 p=24428 u=ubuntu |  TASK [verify nginx service] **********************************************************************************************
-2019-04-24 19:56:09,931 p=24428 u=ubuntu |   [WARNING]: Consider using the service module rather than running 'service'.  If you need to use command because service
+2019-04-24 19:59:01,040 p=24765 u=ubuntu |  PLAY [loadbalancer] ******************************************************************************************************
+2019-04-24 19:59:01,048 p=24765 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:03,191 p=24765 u=ubuntu |  ok: [184.73.112.73]
+2019-04-24 19:59:03,215 p=24765 u=ubuntu |  TASK [verify nginx service] **********************************************************************************************
+2019-04-24 19:59:03,561 p=24765 u=ubuntu |   [WARNING]: Consider using the service module rather than running 'service'.  If you need to use command because service
 is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid
 of this message.
 
-2019-04-24 19:56:09,932 p=24428 u=ubuntu |  changed: [184.73.112.73]
-2019-04-24 19:56:09,956 p=24428 u=ubuntu |  TASK [verify nginx is listening on 80] ***********************************************************************************
-2019-04-24 19:56:10,294 p=24428 u=ubuntu |  ok: [184.73.112.73]
-2019-04-24 19:56:10,302 p=24428 u=ubuntu |  PLAY [webserver] *********************************************************************************************************
-2019-04-24 19:56:10,306 p=24428 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
-2019-04-24 19:56:12,241 p=24428 u=ubuntu |  ok: [3.94.61.153]
-2019-04-24 19:56:12,278 p=24428 u=ubuntu |  ok: [34.227.160.231]
-2019-04-24 19:56:12,301 p=24428 u=ubuntu |  TASK [verify apache2 service] ********************************************************************************************
-2019-04-24 19:56:12,673 p=24428 u=ubuntu |  changed: [3.94.61.153]
-2019-04-24 19:56:12,707 p=24428 u=ubuntu |  changed: [34.227.160.231]
-2019-04-24 19:56:12,732 p=24428 u=ubuntu |  TASK [verify apache2 is listening on 80] *********************************************************************************
-2019-04-24 19:56:13,096 p=24428 u=ubuntu |  ok: [3.94.61.153]
-2019-04-24 19:56:13,119 p=24428 u=ubuntu |  ok: [34.227.160.231]
-2019-04-24 19:56:13,126 p=24428 u=ubuntu |  PLAY [database] **********************************************************************************************************
-2019-04-24 19:56:13,131 p=24428 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
-2019-04-24 19:56:15,030 p=24428 u=ubuntu |  ok: [54.226.55.247]
-2019-04-24 19:56:15,055 p=24428 u=ubuntu |  TASK [verify mysql service] **********************************************************************************************
-2019-04-24 19:56:15,257 p=24428 u=ubuntu |  changed: [54.226.55.247]
-2019-04-24 19:56:15,282 p=24428 u=ubuntu |  TASK [verify mysql is listening on 3306] *********************************************************************************
-2019-04-24 19:56:15,482 p=24428 u=ubuntu |  ok: [54.226.55.247]
-2019-04-24 19:56:15,490 p=24428 u=ubuntu |  PLAY [control] ***********************************************************************************************************
-2019-04-24 19:56:15,495 p=24428 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
-2019-04-24 19:56:15,913 p=24428 u=ubuntu |  ok: [52.70.120.27]
-2019-04-24 19:56:15,938 p=24428 u=ubuntu |  TASK [verify end to end response] ****************************************************************************************
-2019-04-24 19:56:16,413 p=24428 u=ubuntu |  ok: [52.70.120.27] => (item=184.73.112.73)
-2019-04-24 19:56:16,438 p=24428 u=ubuntu |  TASK [fail] **************************************************************************************************************
-2019-04-24 19:56:16,468 p=24428 u=ubuntu |  skipping: [52.70.120.27] => (item={u'status': 200, u'content_length': u'36', u'cookies': {}, '_ansible_item_result': True, u'invocation': {u'module_args': {u'directory_mode': None, u'force': False, u'remote_src': None, u'status_code': [200], u'follow': False, u'owner': None, u'body_format': u'raw', u'client_key': None, u'group': None, u'use_proxy': True, u'unsafe_writes': None, u'setype': None, u'content': None, u'serole': None, u'follow_redirects': u'safe', u'return_content': True, u'client_cert': None, u'body': None, u'timeout': 30, u'src': None, u'dest': None, u'selevel': None, u'force_basic_auth': False, u'removes': None, u'http_agent': u'ansible-httpget', u'regexp': None, u'url_password': None, u'url': u'http://184.73.112.73', u'validate_certs': True, u'seuser': None, u'method': u'GET', u'creates': None, u'headers': {}, u'delimiter': None, u'mode': None, u'url_username': None, u'attributes': None, u'backup': None}}, u'content_type': u'text/html; charset=utf-8', u'date': u'Wed, 24 Apr 2019 19:56:16 GMT', '_ansible_item_label': u'184.73.112.73', '_ansible_no_log': False, 'item': u'184.73.112.73', u'url': u'http://184.73.112.73', u'changed': False, u'server': u'nginx/1.10.3 (Ubuntu)', u'content': u'Hello, from sunny ip-172-31-48-175!\n', 'failed': False, u'connection': u'close', '_ansible_parsed': True, u'msg': u'OK (36 bytes)', u'redirected': False, u'cookies_string': u'', '_ansible_ignore_errors': None}) 
-2019-04-24 19:56:16,493 p=24428 u=ubuntu |  TASK [verify backend response] *******************************************************************************************
-2019-04-24 19:56:16,881 p=24428 u=ubuntu |  ok: [52.70.120.27] => (item=184.73.112.73)
-2019-04-24 19:56:16,907 p=24428 u=ubuntu |  TASK [fail] **************************************************************************************************************
-2019-04-24 19:56:16,937 p=24428 u=ubuntu |  skipping: [52.70.120.27] => (item={u'status': 200, u'content_length': u'42', u'cookies': {}, '_ansible_item_result': True, u'invocation': {u'module_args': {u'directory_mode': None, u'force': False, u'remote_src': None, u'status_code': [200], u'follow': False, u'owner': None, u'body_format': u'raw', u'client_key': None, u'group': None, u'use_proxy': True, u'unsafe_writes': None, u'setype': None, u'content': None, u'serole': None, u'follow_redirects': u'safe', u'return_content': True, u'client_cert': None, u'body': None, u'timeout': 30, u'src': None, u'dest': None, u'selevel': None, u'force_basic_auth': False, u'removes': None, u'http_agent': u'ansible-httpget', u'regexp': None, u'url_password': None, u'url': u'http://184.73.112.73/db', u'validate_certs': True, u'seuser': None, u'method': u'GET', u'creates': None, u'headers': {}, u'delimiter': None, u'mode': None, u'url_username': None, u'attributes': None, u'backup': None}}, u'content_type': u'text/html; charset=utf-8', u'date': u'Wed, 24 Apr 2019 19:56:16 GMT', '_ansible_item_label': u'184.73.112.73', '_ansible_no_log': False, 'item': u'184.73.112.73', u'url': u'http://184.73.112.73/db', u'changed': False, u'server': u'nginx/1.10.3 (Ubuntu)', u'content': u'Database Connected from ip-172-31-63-163!\n', 'failed': False, u'connection': u'close', '_ansible_parsed': True, u'msg': u'OK (42 bytes)', u'redirected': False, u'cookies_string': u'', '_ansible_ignore_errors': None}) 
-2019-04-24 19:56:16,939 p=24428 u=ubuntu |  PLAY RECAP ***************************************************************************************************************
-2019-04-24 19:56:16,941 p=24428 u=ubuntu |  184.73.112.73              : ok=3    changed=1    unreachable=0    failed=0   
-2019-04-24 19:56:16,941 p=24428 u=ubuntu |  3.94.61.153                : ok=3    changed=1    unreachable=0    failed=0   
-2019-04-24 19:56:16,942 p=24428 u=ubuntu |  34.227.160.231             : ok=3    changed=1    unreachable=0    failed=0   
-2019-04-24 19:56:16,942 p=24428 u=ubuntu |  52.70.120.27               : ok=3    changed=0    unreachable=0    failed=0   
-2019-04-24 19:56:16,942 p=24428 u=ubuntu |  54.226.55.247              : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:03,562 p=24765 u=ubuntu |  changed: [184.73.112.73]
+2019-04-24 19:59:03,587 p=24765 u=ubuntu |  TASK [verify nginx is listening on 80] ***********************************************************************************
+2019-04-24 19:59:03,931 p=24765 u=ubuntu |  ok: [184.73.112.73]
+2019-04-24 19:59:03,938 p=24765 u=ubuntu |  PLAY [webserver] *********************************************************************************************************
+2019-04-24 19:59:03,943 p=24765 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:05,849 p=24765 u=ubuntu |  ok: [34.227.160.231]
+2019-04-24 19:59:05,877 p=24765 u=ubuntu |  ok: [3.94.61.153]
+2019-04-24 19:59:05,901 p=24765 u=ubuntu |  TASK [verify apache2 service] ********************************************************************************************
+2019-04-24 19:59:06,258 p=24765 u=ubuntu |  changed: [3.94.61.153]
+2019-04-24 19:59:06,291 p=24765 u=ubuntu |  changed: [34.227.160.231]
+2019-04-24 19:59:06,316 p=24765 u=ubuntu |  TASK [verify apache2 is listening on 80] *********************************************************************************
+2019-04-24 19:59:06,666 p=24765 u=ubuntu |  ok: [3.94.61.153]
+2019-04-24 19:59:06,700 p=24765 u=ubuntu |  ok: [34.227.160.231]
+2019-04-24 19:59:06,707 p=24765 u=ubuntu |  PLAY [database] **********************************************************************************************************
+2019-04-24 19:59:06,712 p=24765 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:08,587 p=24765 u=ubuntu |  ok: [54.226.55.247]
+2019-04-24 19:59:08,613 p=24765 u=ubuntu |  TASK [verify mysql service] **********************************************************************************************
+2019-04-24 19:59:08,815 p=24765 u=ubuntu |  changed: [54.226.55.247]
+2019-04-24 19:59:08,840 p=24765 u=ubuntu |  TASK [verify mysql is listening on 3306] *********************************************************************************
+2019-04-24 19:59:09,039 p=24765 u=ubuntu |  ok: [54.226.55.247]
+2019-04-24 19:59:09,047 p=24765 u=ubuntu |  PLAY [control] ***********************************************************************************************************
+2019-04-24 19:59:09,051 p=24765 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:09,483 p=24765 u=ubuntu |  ok: [52.70.120.27]
+2019-04-24 19:59:09,508 p=24765 u=ubuntu |  TASK [verify end to end response] ****************************************************************************************
+2019-04-24 19:59:09,797 p=24765 u=ubuntu |  ok: [52.70.120.27] => (item=184.73.112.73)
+2019-04-24 19:59:09,823 p=24765 u=ubuntu |  TASK [fail] **************************************************************************************************************
+2019-04-24 19:59:09,852 p=24765 u=ubuntu |  skipping: [52.70.120.27] => (item={u'status': 200, u'content_length': u'36', u'cookies': {}, '_ansible_item_result': True, u'invocation': {u'module_args': {u'directory_mode': None, u'force': False, u'remote_src': None, u'status_code': [200], u'follow': False, u'owner': None, u'body_format': u'raw', u'client_key': None, u'group': None, u'use_proxy': True, u'unsafe_writes': None, u'setype': None, u'content': None, u'serole': None, u'follow_redirects': u'safe', u'return_content': True, u'client_cert': None, u'body': None, u'timeout': 30, u'src': None, u'dest': None, u'selevel': None, u'force_basic_auth': False, u'removes': None, u'http_agent': u'ansible-httpget', u'regexp': None, u'url_password': None, u'url': u'http://184.73.112.73', u'validate_certs': True, u'seuser': None, u'method': u'GET', u'creates': None, u'headers': {}, u'delimiter': None, u'mode': None, u'url_username': None, u'attributes': None, u'backup': None}}, u'content_type': u'text/html; charset=utf-8', u'date': u'Wed, 24 Apr 2019 19:59:09 GMT', '_ansible_item_label': u'184.73.112.73', '_ansible_no_log': False, 'item': u'184.73.112.73', u'url': u'http://184.73.112.73', u'changed': False, u'server': u'nginx/1.10.3 (Ubuntu)', u'content': u'Hello, from sunny ip-172-31-48-175!\n', 'failed': False, u'connection': u'close', '_ansible_parsed': True, u'msg': u'OK (36 bytes)', u'redirected': False, u'cookies_string': u'', '_ansible_ignore_errors': None}) 
+2019-04-24 19:59:09,878 p=24765 u=ubuntu |  TASK [verify backend response] *******************************************************************************************
+2019-04-24 19:59:10,042 p=24765 u=ubuntu |  ok: [52.70.120.27] => (item=184.73.112.73)
+2019-04-24 19:59:10,068 p=24765 u=ubuntu |  TASK [fail] **************************************************************************************************************
+2019-04-24 19:59:10,100 p=24765 u=ubuntu |  skipping: [52.70.120.27] => (item={u'status': 200, u'content_length': u'42', u'cookies': {}, '_ansible_item_result': True, u'invocation': {u'module_args': {u'directory_mode': None, u'force': False, u'remote_src': None, u'status_code': [200], u'follow': False, u'owner': None, u'body_format': u'raw', u'client_key': None, u'group': None, u'use_proxy': True, u'unsafe_writes': None, u'setype': None, u'content': None, u'serole': None, u'follow_redirects': u'safe', u'return_content': True, u'client_cert': None, u'body': None, u'timeout': 30, u'src': None, u'dest': None, u'selevel': None, u'force_basic_auth': False, u'removes': None, u'http_agent': u'ansible-httpget', u'regexp': None, u'url_password': None, u'url': u'http://184.73.112.73/db', u'validate_certs': True, u'seuser': None, u'method': u'GET', u'creates': None, u'headers': {}, u'delimiter': None, u'mode': None, u'url_username': None, u'attributes': None, u'backup': None}}, u'content_type': u'text/html; charset=utf-8', u'date': u'Wed, 24 Apr 2019 19:59:10 GMT', '_ansible_item_label': u'184.73.112.73', '_ansible_no_log': False, 'item': u'184.73.112.73', u'url': u'http://184.73.112.73/db', u'changed': False, u'server': u'nginx/1.10.3 (Ubuntu)', u'content': u'Database Connected from ip-172-31-63-163!\n', 'failed': False, u'connection': u'close', '_ansible_parsed': True, u'msg': u'OK (42 bytes)', u'redirected': False, u'cookies_string': u'', '_ansible_ignore_errors': None}) 
+2019-04-24 19:59:10,102 p=24765 u=ubuntu |  PLAY RECAP ***************************************************************************************************************
+2019-04-24 19:59:10,104 p=24765 u=ubuntu |  184.73.112.73              : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:10,104 p=24765 u=ubuntu |  3.94.61.153                : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:10,105 p=24765 u=ubuntu |  34.227.160.231             : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:10,105 p=24765 u=ubuntu |  52.70.120.27               : ok=3    changed=0    unreachable=0    failed=0   
+2019-04-24 19:59:10,105 p=24765 u=ubuntu |  54.226.55.247              : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:49,640 p=25068 u=ubuntu |  PLAY [loadbalancer] ******************************************************************************************************
+2019-04-24 19:59:49,648 p=25068 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:50,411 p=25068 u=ubuntu |  ok: [184.73.112.73]
+2019-04-24 19:59:50,437 p=25068 u=ubuntu |  TASK [verify nginx service] **********************************************************************************************
+2019-04-24 19:59:50,788 p=25068 u=ubuntu |   [WARNING]: Consider using the service module rather than running 'service'.  If you need to use command because service
+is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid
+of this message.
+
+2019-04-24 19:59:50,788 p=25068 u=ubuntu |  changed: [184.73.112.73]
+2019-04-24 19:59:50,813 p=25068 u=ubuntu |  TASK [verify nginx is listening on 80] ***********************************************************************************
+2019-04-24 19:59:51,148 p=25068 u=ubuntu |  ok: [184.73.112.73]
+2019-04-24 19:59:51,156 p=25068 u=ubuntu |  PLAY [webserver] *********************************************************************************************************
+2019-04-24 19:59:51,161 p=25068 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:51,749 p=25068 u=ubuntu |  ok: [3.94.61.153]
+2019-04-24 19:59:51,759 p=25068 u=ubuntu |  ok: [34.227.160.231]
+2019-04-24 19:59:51,782 p=25068 u=ubuntu |  TASK [verify apache2 service] ********************************************************************************************
+2019-04-24 19:59:52,050 p=25068 u=ubuntu |  changed: [3.94.61.153]
+2019-04-24 19:59:52,082 p=25068 u=ubuntu |  changed: [34.227.160.231]
+2019-04-24 19:59:52,107 p=25068 u=ubuntu |  TASK [verify apache2 is listening on 80] *********************************************************************************
+2019-04-24 19:59:52,368 p=25068 u=ubuntu |  ok: [3.94.61.153]
+2019-04-24 19:59:52,401 p=25068 u=ubuntu |  ok: [34.227.160.231]
+2019-04-24 19:59:52,409 p=25068 u=ubuntu |  PLAY [database] **********************************************************************************************************
+2019-04-24 19:59:52,413 p=25068 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:52,930 p=25068 u=ubuntu |  ok: [54.226.55.247]
+2019-04-24 19:59:52,956 p=25068 u=ubuntu |  TASK [verify mysql service] **********************************************************************************************
+2019-04-24 19:59:53,199 p=25068 u=ubuntu |  changed: [54.226.55.247]
+2019-04-24 19:59:53,225 p=25068 u=ubuntu |  TASK [verify mysql is listening on 3306] *********************************************************************************
+2019-04-24 19:59:53,462 p=25068 u=ubuntu |  ok: [54.226.55.247]
+2019-04-24 19:59:53,469 p=25068 u=ubuntu |  PLAY [control] ***********************************************************************************************************
+2019-04-24 19:59:53,474 p=25068 u=ubuntu |  TASK [Gathering Facts] ***************************************************************************************************
+2019-04-24 19:59:53,881 p=25068 u=ubuntu |  ok: [52.70.120.27]
+2019-04-24 19:59:53,905 p=25068 u=ubuntu |  TASK [verify end to end response] ****************************************************************************************
+2019-04-24 19:59:54,239 p=25068 u=ubuntu |  ok: [52.70.120.27] => (item=184.73.112.73)
+2019-04-24 19:59:54,264 p=25068 u=ubuntu |  TASK [fail] **************************************************************************************************************
+2019-04-24 19:59:54,339 p=25068 u=ubuntu |  skipping: [52.70.120.27] => (item={u'status': 200, u'content_length': u'36', u'cookies': {}, '_ansible_item_result': True, u'invocation': {u'module_args': {u'directory_mode': None, u'force': False, u'remote_src': None, u'status_code': [200], u'follow': False, u'owner': None, u'body_format': u'raw', u'client_key': None, u'group': None, u'use_proxy': True, u'unsafe_writes': None, u'setype': None, u'content': None, u'serole': None, u'follow_redirects': u'safe', u'return_content': True, u'client_cert': None, u'body': None, u'timeout': 30, u'src': None, u'dest': None, u'selevel': None, u'force_basic_auth': False, u'removes': None, u'http_agent': u'ansible-httpget', u'regexp': None, u'url_password': None, u'url': u'http://184.73.112.73', u'validate_certs': True, u'seuser': None, u'method': u'GET', u'creates': None, u'headers': {}, u'delimiter': None, u'mode': None, u'url_username': None, u'attributes': None, u'backup': None}}, u'content_type': u'text/html; charset=utf-8', u'date': u'Wed, 24 Apr 2019 19:59:54 GMT', '_ansible_item_label': u'184.73.112.73', '_ansible_no_log': False, 'item': u'184.73.112.73', u'url': u'http://184.73.112.73', u'changed': False, u'server': u'nginx/1.10.3 (Ubuntu)', u'content': u'Hello, from sunny ip-172-31-48-175!\n', 'failed': False, u'connection': u'close', '_ansible_parsed': True, u'msg': u'OK (36 bytes)', u'redirected': False, u'cookies_string': u'', '_ansible_ignore_errors': None}) 
+2019-04-24 19:59:54,367 p=25068 u=ubuntu |  TASK [verify backend response] *******************************************************************************************
+2019-04-24 19:59:54,602 p=25068 u=ubuntu |  ok: [52.70.120.27] => (item=184.73.112.73)
+2019-04-24 19:59:54,628 p=25068 u=ubuntu |  TASK [fail] **************************************************************************************************************
+2019-04-24 19:59:54,656 p=25068 u=ubuntu |  skipping: [52.70.120.27] => (item={u'status': 200, u'content_length': u'42', u'cookies': {}, '_ansible_item_result': True, u'invocation': {u'module_args': {u'directory_mode': None, u'force': False, u'remote_src': None, u'status_code': [200], u'follow': False, u'owner': None, u'body_format': u'raw', u'client_key': None, u'group': None, u'use_proxy': True, u'unsafe_writes': None, u'setype': None, u'content': None, u'serole': None, u'follow_redirects': u'safe', u'return_content': True, u'client_cert': None, u'body': None, u'timeout': 30, u'src': None, u'dest': None, u'selevel': None, u'force_basic_auth': False, u'removes': None, u'http_agent': u'ansible-httpget', u'regexp': None, u'url_password': None, u'url': u'http://184.73.112.73/db', u'validate_certs': True, u'seuser': None, u'method': u'GET', u'creates': None, u'headers': {}, u'delimiter': None, u'mode': None, u'url_username': None, u'attributes': None, u'backup': None}}, u'content_type': u'text/html; charset=utf-8', u'date': u'Wed, 24 Apr 2019 19:59:54 GMT', '_ansible_item_label': u'184.73.112.73', '_ansible_no_log': False, 'item': u'184.73.112.73', u'url': u'http://184.73.112.73/db', u'changed': False, u'server': u'nginx/1.10.3 (Ubuntu)', u'content': u'Database Connected from ip-172-31-63-163!\n', 'failed': False, u'connection': u'close', '_ansible_parsed': True, u'msg': u'OK (42 bytes)', u'redirected': False, u'cookies_string': u'', '_ansible_ignore_errors': None}) 
+2019-04-24 19:59:54,659 p=25068 u=ubuntu |  PLAY RECAP ***************************************************************************************************************
+2019-04-24 19:59:54,661 p=25068 u=ubuntu |  184.73.112.73              : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:54,661 p=25068 u=ubuntu |  3.94.61.153                : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:54,661 p=25068 u=ubuntu |  34.227.160.231             : ok=3    changed=1    unreachable=0    failed=0   
+2019-04-24 19:59:54,661 p=25068 u=ubuntu |  52.70.120.27               : ok=3    changed=0    unreachable=0    failed=0   
+2019-04-24 19:59:54,662 p=25068 u=ubuntu |  54.226.55.247              : ok=3    changed=1    unreachable=0    failed=0   
